@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Dashboard/styles-dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="level">
+          <h1 id="water-level">Niveau de l'eau</h1>
+          <meter id="vertical-meter" min="0" max="100" value="75"></meter>
+        </div>
+        <h1 id="commands">Commande des valves</h1>
+        <div class="buttons">
+            <button id="button1">Valve toilletes</button>
+            <button id="button2">Valve machine à laver</button>
+            <button id="button3">Valve jardin</button>
+        </div>
+    </div>
+    <script>
+      // Get all buttons
+      const buttons = document.querySelectorAll('.buttons button');
+
+      // Iterate through each button
+      buttons.forEach(button => {
+          // Add click event listener
+          button.addEventListener('click', function() {
+              // Toggle class 'green'
+              this.classList.toggle('green');
+          });
+      });
+    </script>
+</body>
+</html>

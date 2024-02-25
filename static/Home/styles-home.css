@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+.hero {
+    background-image: url('rain-background2.jpg'); /* Replace 'hero-background.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Set text color to white so it's visible against the background */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.content {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
