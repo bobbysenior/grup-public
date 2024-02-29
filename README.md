@@ -1,3 +1,3 @@
 # grup-web
 
-PTDR non mais vraiment quoi un README alors que je bosse seul #ctriste
+A small web app project for school (it is just a proof of concept don't judge my code)
