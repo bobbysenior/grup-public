@@ -1,7 +1,7 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from waitress import serve
 
-template_dir = "/home/blc/Projet/grup-web/static"
+template_dir = "/home/bobby/Projet/grup-public/static"
 
 app = Flask(__name__, template_folder=template_dir)
 
@@ -15,7 +15,10 @@ def index():
 
 @app.route("/Dashboard")
 def dashboard():
-    return render_template("Dashboard/dashboard.html")
+    water_level = request.args.get('water_level') #From 0 to 100
+    if water_level == None:
+        water_level = 0
+    return render_template("Dashboard/dashboard.html", water_level=water_level)
 
 if __name__ == "__main__":
     #app.run(debug=False)
