@@ -14,9 +14,9 @@
         </div>
         <h1 id="commands">Commande des valves</h1>
         <div class="buttons">
-            <button id="boutton_pump">Pompe</button>
-            <button id="button1">Valve 1</button>
-            <button id="button2">Valve 2</button>
+            <button id="button_pump" class="{% if pump_state %}green{% endif %}">Pompe</button>
+            <button id="button1" class="{% if valve1_state %}green{% endif %}">Valve 1</button>
+            <button id="button2" class="{% if valve2_state %}green{% endif %}">Valve 2</button>
         </div>
     </div>
     <script>
