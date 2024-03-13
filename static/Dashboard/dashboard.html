@@ -14,9 +14,9 @@
         </div>
         <h1 id="commands">Commande des valves</h1>
         <div class="buttons">
-            <button id="button1">Valve toilletes</button>
-            <button id="button2">Valve machine à laver</button>
-            <button id="button3">Valve jardin</button>
+            <button id="boutton_pump">Pompe</button>
+            <button id="button1">Valve 1</button>
+            <button id="button2">Valve 2</button>
         </div>
     </div>
     <script>
@@ -29,6 +29,30 @@
           button.addEventListener('click', function() {
               // Toggle class 'green'
               this.classList.toggle('green');
+
+              // Create a JSON object with the button's ID
+        const data = { buttonId: this.id, name: "le sang"};
+
+                // Send a POST request to the server
+                fetch('/control', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Response:', data);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
           });
       });
     </script>
