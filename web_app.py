@@ -33,7 +33,7 @@ def control():
     global pump_state, valve1_state, valve2_state
     # Check if the request contains JSON data
     if request.method == 'GET':
-        return f"Pompe : {pump_state} || Valve 1 : {valve1_state} || Valve 2 : {valve2_state}"
+        return f"{int(pump_state)},{int(valve1_state)},{int(valve2_state)}"
     if request.is_json:
         data = request.get_json()  # Get JSON data from the request
         # Assuming JSON data contains a 'name' field
